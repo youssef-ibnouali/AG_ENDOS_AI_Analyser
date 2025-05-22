@@ -1,0 +1,8 @@
+# Ignore le dossier VS Code
+.vscode/
+
+# Ignore les fichiers de cache Python
+__pycache__/
+
+# Ignore l'environnement virtuel
+env/
