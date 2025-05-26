@@ -23,8 +23,8 @@ Ce guide vous aide à configurer un environnement virtuel Python 3.11, à instal
 2. **Cloner le projet :**
 
    ```bash
-   git clone https://github.com/youssef-ibnouali/CT_AI_Analyser.git
-   cd CT_AI_Analyser
+   git clone https://github.com/youssef-ibnouali/AG_ENDOS_AI_Analyser.git
+   cd AG_ENDOS_AI_Analyser
    ```
 
 3. **Créez un environnement virtuel :**
@@ -61,6 +61,6 @@ Ce guide vous aide à configurer un environnement virtuel Python 3.11, à instal
 
    et le reste
    ```bash
-   pip install numpy flask pillow matplotlib pytorch-msssim git+https://github.com/nasa/pretrained-microscopy-models.git scikit-learn
+   pip install numpy flask pillow matplotlib pytorch-msssim scikit-learn
 
    ```
