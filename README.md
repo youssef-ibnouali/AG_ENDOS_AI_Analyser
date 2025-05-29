@@ -54,13 +54,6 @@ Ce guide vous aide à configurer un environnement virtuel Python 3.11, à instal
 
    Exécutez la commande suivante pour installer les bibliothèques :
 
-   Pytorch:
    ```bash
-   pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu121
-   ```
-
-   et le reste
-   ```bash
-   pip install numpy flask pillow matplotlib pytorch-msssim scikit-learn
-
+   pip install -r requirements.txt
    ```
