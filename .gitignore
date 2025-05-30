@@ -6,3 +6,7 @@ __pycache__/
 
 # Ignore l'environnement virtuel
 env/
+
+
+# Ignore Data
+data/
