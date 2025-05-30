@@ -17,7 +17,7 @@ def show_preprocessing_comparison(dataset, batch_size=4):
     Show raw vs. (preprocessed + normalized) inputs.
     """
     indices = np.random.choice(len(dataset), batch_size, replace=False)
-    fig, axes = plt.subplots(batch_size, 2, figsize=(6, 3 * batch_size))
+    fig, axes = plt.subplots(batch_size, 3, figsize=(10, 3 * batch_size))
 
     # Unpack the mean/std you used in your Dataset
     mean = dataset.transform.transforms[-1].mean   # [0.485,0.456,0.406]
@@ -33,21 +33,23 @@ def show_preprocessing_comparison(dataset, batch_size=4):
 
         # 3- Unnormalize for display
         img_disp = unnormalize(img_tensor.clone(), mean, std)
-        #img_np   = img_tensor.permute(1,2,0).numpy()
+        img_npn   = img_tensor.permute(1,2,0).numpy()
         img_np   = img_disp.permute(1,2,0).numpy()
 
         # Plot
-        axes[row, 0].imshow(orig)
-
         if label == 0: label = "normal stomach"
         else: label = "inflamed gastric mucosa"
-
+        axes[row, 0].imshow(orig)
         axes[row, 0].set_title(label)
         axes[row, 0].axis('off')
 
         axes[row, 1].imshow(img_np)
         axes[row, 1].set_title("Preprocessed")
         axes[row, 1].axis('off')
+
+        axes[row, 2].imshow(img_npn)
+        axes[row, 2].set_title("normalized")
+        axes[row, 2].axis('off')
 
     plt.tight_layout()
     plt.show()
