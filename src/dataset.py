@@ -10,7 +10,7 @@ class AGDataset(Dataset):
         subdirs = ['normal', 'ag']
         self.samples = []
         for label_idx, sub in enumerate(subdirs):
-            folder = os.path.join(root_dir, 'raw', sub)
+            folder = os.path.join(root_dir, sub)
             for fname in os.listdir(folder):
                 if fname.lower().endswith('.bmp') or fname.lower().endswith('.jpg'):
                     self.samples.append((os.path.join(folder, fname), label_idx))
@@ -27,6 +27,6 @@ class AGDataset(Dataset):
     def __getitem__(self, idx):
         path, label = self.samples[idx]
         img = Image.open(path).convert('RGB')
-        img = preprocess_pil(img)
+        #img = preprocess_pil(img)
         img = self.transform(img)
         return img, label
