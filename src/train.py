@@ -89,7 +89,7 @@ def main():
             torch.save(model.state_dict(), ckpt_path)
             print(f"  → Saved best model to {ckpt_path}")
 
-    print("Training complete. Best val acc: ", best_val_acc)
+    print("Training complete. Best val acc: ", best_val_acc*100,"%")
 
 if __name__ == "__main__":
     main()

@@ -31,7 +31,7 @@ def evaluate_model(model, dataloader, device):
             images = images.to(device)
             labels = labels.to(device)
             outputs = model(images)
-            probs = torch.softmax(outputs, dim=1)[:, 1]  # probability of class "AG"
+            probs = torch.softmax(outputs, dim=1)[:, 1] 
             preds = outputs.argmax(dim=1)
 
             y_true.extend(labels.cpu().numpy())

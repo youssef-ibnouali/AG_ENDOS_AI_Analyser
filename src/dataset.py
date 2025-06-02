@@ -6,7 +6,7 @@ from preprocessing import preprocess_pil
 
 class AGDataset(Dataset):
     def __init__(self, root_dir, split='train', transform=None):
-        # construit la liste (path, label)
+        # build the list (path, label)
         subdirs = ['normal', 'ag']
         self.samples = []
         for label_idx, sub in enumerate(subdirs):
