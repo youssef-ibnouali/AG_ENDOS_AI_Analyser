@@ -1,16 +1,16 @@
 import os
+import glob
 import random
 from PIL import Image
 from torchvision import transforms
 from tqdm import tqdm
-
-# Import your preprocessing pipeline
 from preprocessing import preprocess_pil
+
 
 # ------------- CONFIGURATION -------------
 RAW_DIR       = "data/raw"       # data/raw/normal, data/raw/ag
 PROCESSED_DIR = "data/processed" # will contain train/val/test/normal and /ag
-SPLITS        = {"train": 0.7, "val": 0.15, "test": 0.15}
+SPLITS        = {"train": 0.6, "val": 0.25, "test": 0.15}
 N_AUG         = 10              # number of augmentations per train image
 SEED          = 42
 
