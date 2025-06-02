@@ -11,7 +11,7 @@ from PIL import Image
 import torchvision.transforms as T
 
 from dataset import AGDataset
-from model import AGClassifier
+from model import *
 
 def unnormalize(tensor, mean, std):
     """
@@ -158,7 +158,7 @@ def main():
     test_dataset = AGDataset(root_dir=os.path.join(data_root, "test"))
 
     # Load model
-    model = AGClassifier(num_classes=2, pretrained=False).to(device)
+    model = AGClassifierDenseNet121(num_classes=2, pretrained=False).to(device)
     model.load_state_dict(torch.load(checkpoint_path, map_location=device))
 
     # Show combined results

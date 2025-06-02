@@ -4,7 +4,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from dataset import AGDataset
-from model import AGClassifier
+from model import *
 from tqdm import tqdm
 
 def train_one_epoch(model, dataloader, criterion, optimizer, device):
@@ -67,7 +67,7 @@ def main():
     val_loader    = DataLoader(val_dataset,   batch_size=batch_size, shuffle=False, num_workers=4)
 
     # 3) Model, Loss, Optimizer
-    model = AGClassifier(num_classes=2, pretrained=True).to(device)
+    model = AGClassifierDenseNet121(num_classes=2, pretrained=True).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
