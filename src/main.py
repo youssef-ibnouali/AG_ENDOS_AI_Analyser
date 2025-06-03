@@ -18,7 +18,7 @@ if __name__ == "__main__":
     clear("data/processed/test/normal")
     clear("data/processed/test/ag")
 
-    print("=== DATA AUGMENTATION ===")
+    print("=== PREPROCESSING & DATA AUGMENTATION ===")
     create_augmented_dataset()
 
     clear("checkpoints")
